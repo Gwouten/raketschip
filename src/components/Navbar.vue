@@ -1,12 +1,17 @@
 <template>
     <div class="nav">
         <div class="container">
-            <div class="flex">
+            <div class="flex flex--space-between flex--align-items-center">
+                
                 <h1>
                     <router-link to="/" class="header-link">Raketschip</router-link>
                 </h1>
-                <router-link to="/">Home</router-link>
-                <router-link to="/about">About</router-link>
+
+                <div class="flex">
+                    <router-link to="/"      active-class="active" class="nav__link" exact>Home</router-link>
+                    <router-link to="/about" active-class="active" class="nav__link">About</router-link>
+                </div>
+
             </div>
         </div>
     </div>
@@ -42,6 +47,35 @@ export default {
 
     .flex {
         display: flex;
+        &--space-between {
+            justify-content: space-between;
+        }
+        &--align-items-center {
+            align-items: center;
+        }
+    }
+
+    &__link {
+        color: rgba($white, .85);
+        transition: color .2s;
+        font-family: $font-header;
+        font-weight: 400;
+        text-decoration: none;
+        padding: $rh-xxs 0;
+        border-bottom: 1px solid transparent;
+        transition: border-bottom .3s;
+
+        &.active {
+            border-bottom: 1px solid $white;
+        }
+
+        &:hover {
+            color: $white;
+        }
+
+        & + .nav__link {
+            margin-left: $rh-sml;
+        }
     }
 }
 </style>

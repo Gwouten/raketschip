@@ -36,7 +36,7 @@ export default {
     &--primary {
       background: $primary;
       background-size: 200%;
-      transition: box-shadow .2s;
+      transition: box-shadow .2s, background-position .5s;
       &:hover {
         background-position: right;
         box-shadow: $shadow inset;
