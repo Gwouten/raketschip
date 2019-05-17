@@ -1,5 +1,21 @@
 // Colors
-$primary: green;
+$primary: linear-gradient(to right, #D93250 0%, #D92534 50%);
+
+$white: #efefef;
+$black: #090909;
 
 // Fonts
-$font-header: 'Passion One', cursive;
+$font-header: 'Roboto Condensed', sans-serif;
+
+// Vertical rythm
+$rh-xxl: 60px;
+$rh-xlr: 48px;
+$rh-lrg: 36px;
+$rh-med: 24px;
+$rh-sml: 18px;
+$rh-xsm: 12px;
+$rh-xxs: 6px;
+
+// Shadow
+$shadow: 0 3px 10px rgba($black, .5);
+$text-shadow: 0 3px 5px rgba($black, .5);

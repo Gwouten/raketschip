@@ -1,33 +1,54 @@
 <template>
-    <div class="container">
-      <div class="nav">
-        <app-header></app-header>
-        <router-link to="/">Home</router-link> |
-        <router-link to="/about">About</router-link>
+  <div>
+      
+      <div class="section section--primary">
+        <app-navbar></app-navbar>
       </div>
-      <router-view/>
-    </div>
+
+      <div class="section">
+        <transition name="fade" mode="out-in">
+          <router-view/>
+        </transition>
+      </div>
+
+  </div>
 </template>
 
 <script>
-import Header from "@/components/Header.vue";
+import Navbar from "@/components/Navbar.vue";
+import '@/styles/_animations.scss';
 
 export default {
   components: {
-    appHeader: Header
+    appNavbar: Navbar
   },
 };
 </script>
 
 <style lang="scss">
-  @import url('https://fonts.googleapis.com/css?family=Passion+One&display=swap');
+  @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&display=swap');
 
   body {
     background-color: #dedede;
   }
 
+  .section {
+    &--primary {
+      background: $primary;
+      background-size: 200%;
+      transition: box-shadow .2s;
+      &:hover {
+        background-position: right;
+        box-shadow: $shadow inset;
+
+        & h1 {
+          text-shadow: $text-shadow;
+        }
+      }
+    }
+  }
+
   .container {
-    background-color: #fff;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
