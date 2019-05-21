@@ -6,6 +6,10 @@
         </div>
       </transition>
 
+      <div class="section">
+        <app-common-header></app-common-header>
+      </div>
+
       <div class="page">
         <div class="section">
           <transition name="fade" mode="out-in">
@@ -19,6 +23,7 @@
 
 <script>
 import Navbar from "@/components/Navbar.vue";
+import CommonHeader from "@/components/CommonHeader.vue";
 import '@/styles/_animations.scss';
 import { ticking, update, requestTick } from '@/mixins/tick'; // For debouncing
 
@@ -29,7 +34,8 @@ export default {
       }
   },
   components: {
-    appNavbar: Navbar
+    appNavbar: Navbar,
+    appCommonHeader: CommonHeader
   },
   methods: {
         toggleNavbar(y) {
