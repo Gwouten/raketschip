@@ -5,8 +5,20 @@
 .fade-enter-active {
     transition: opacity .5s;
 }
-.fade-leave {}
 .fade-leave-active {
     opacity: 0;
     transition: opacity .5s;
+}
+
+// Slide down animation
+.slide-down-enter-active {
+    animation: slide-down .1s forwards ease-out;
+}
+.slide-down-leave-active {
+    animation: slide-down .1s forwards ease-out reverse;
+}
+
+@keyframes slide-down {
+    0%   {transform: translateY(-105%)}
+    100% {transform: translateY(0%)}
 }
